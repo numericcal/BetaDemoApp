@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 });
 
         // finally display labels and timing info
-        labelOverlay.compose(Utils.mkOT(Utils.lpfTT(0.5f)))
+        labelOverlay.compose(Utils.mkOT(Utils.lpfTT(0.95f))) // low-pass network response
                 .observeOn(AndroidSchedulers.mainThread())
                 .as(AutoDispose.autoDisposable(AndroidLifecycleScopeProvider.from(this)))
                 .subscribe(this::updateUI, Throwable::printStackTrace );
